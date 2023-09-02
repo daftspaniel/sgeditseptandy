@@ -2,3 +2,19 @@
   padding: 2em;
   border: 1px solid white;
 }
+
+.Palette {
+  display: "flex";
+  border: 1px solid black; 
+  width: 156px;
+  margin: 10px;
+  margin-top: 10px; 
+}
+
+.Palettes {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background-color: #87bede;
+  width: 350px;
+}

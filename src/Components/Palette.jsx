@@ -27,6 +27,7 @@ const Palette = (props) => {
           alt={char}
           key={char}
           src={CharacterSet[intToHex(char)]}
+          style={{ width: w, height: h, marginRight: 3 }}
         />
       ))}
     </div>
