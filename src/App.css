@@ -4,11 +4,13 @@
 }
 
 .Palette {
-  display: "flex";
-  border: 1px solid black; 
+  display: 'flex';
+  border: 1px solid rgb(80, 78, 78);
   width: 156px;
   margin: 10px;
-  margin-top: 10px; 
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 5px;
 }
 
 .Palettes {
@@ -16,5 +18,15 @@
   flex-direction: row;
   text-align: center;
   background-color: #87bede;
+  width: 370px;
+  border-radius: 12px;
+}
+
+.SelectedPalette {
   width: 350px;
+  background-color: #87bede;
+  width: 360px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 5px;
 }
