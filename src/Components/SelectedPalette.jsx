@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { SG4 } from '../Common/ScreenModes'
 import { intToHex } from '../Lib/Util'
 import CharacterSet from '../Common/CharacterSet'
 
 import { useGlobalState } from '../State/Store'
+
 const characterStyle = { width: 32, height: 48 }
 
-const SelectedPalette = (props) => {
+const SelectedPalette = () => {
   const state = useGlobalState()
   const primaryCharacter = state.getPrimaryChar()
   const secondaryCharacter = state.getSecondaryChar()
