@@ -9,8 +9,8 @@ const characterStyle = { width: 32, height: 48 }
 
 const SelectedPalette = (props) => {
   const state = useGlobalState()
-  const primaryCharacter = state.getPrimaryChar().value
-  const secondaryCharacter = state.getSecondaryChar().value
+  const primaryCharacter = state.getPrimaryChar()
+  const secondaryCharacter = state.getSecondaryChar()
 
   return (
     <div className="SelectedPalette">

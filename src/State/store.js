@@ -15,8 +15,8 @@ export const useGlobalState = () => {
   const state = useHookstate(initialState)
 
   return {
-    getPrimaryChar: () => state.primaryChar,
-    getSecondaryChar: () => state.secondaryChar,
+    getPrimaryChar: () => state.primaryChar.value,
+    getSecondaryChar: () => state.secondaryChar.value,
     setPrimaryChar: (char) => state.primaryChar.set(char),
     setSecondaryChar: (char) => state.secondaryChar.set(char),
   }
