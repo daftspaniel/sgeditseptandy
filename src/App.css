@@ -23,10 +23,15 @@
 }
 
 .SelectedPalette {
-  width: 350px;
+  display: flex;
+  flex-direction: row;
   background-color: #87bede;
   width: 360px;
   border-radius: 12px;
   margin-bottom: 12px;
+  padding: 5px;
+}
+
+.CharacterSelection {
   padding: 5px;
 }

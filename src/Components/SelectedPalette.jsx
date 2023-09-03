@@ -4,14 +4,13 @@ import { SG4 } from '../Common/ScreenModes'
 import { intToHex } from '../Lib/Util'
 import CharacterSet from '../Common/CharacterSet'
 
-import { useGlobalState } from '../State/store'
+import { useGlobalState } from '../State/Store'
 const characterStyle = { width: 32, height: 48 }
 
 const SelectedPalette = (props) => {
   const state = useGlobalState()
   const primaryCharacter = state.getPrimaryChar().value
   const secondaryCharacter = state.getSecondaryChar().value
-
 
   return (
     <div className="SelectedPalette">
@@ -23,6 +22,8 @@ const SelectedPalette = (props) => {
           style={characterStyle}
           src={CharacterSet[intToHex(primaryCharacter)]}
         />
+      </div>
+      <div className="CharacterSelection">
         <img
           id={primaryCharacter}
           alt={state.getSecondaryChar()}
