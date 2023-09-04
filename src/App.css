@@ -35,3 +35,13 @@
 .CharacterSelection {
   padding: 5px;
 }
+
+.EditorPanel {
+  display: flex;
+  flex-direction: row;
+  background-color: #87bede;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  width: fit-content;
+}
