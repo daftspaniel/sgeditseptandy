@@ -55,13 +55,14 @@
 .maincolumn1 {
   display: flex;
   flex-direction: row;
-  background-color: #87bede;
+  background-color: #1f221f;
   width: 120px;
   border-radius: 12px;
   margin-bottom: 12px;
   margin-top: 12px;
   margin-right: 12px;
   padding: 5px;
+  border: 1px solid whitesmoke;
 }
 
 .maincolumn2 {
@@ -72,4 +73,12 @@
 .maincolumn3 {
   margin: 5px;
   width: fit-content;
+}
+
+.actionButton {
+  width: 100px;
+  border-radius: 4px;
+  padding: 12px;
+  background-color: rgb(34, 34, 34);
+
 }

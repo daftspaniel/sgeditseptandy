@@ -1,0 +1,14 @@
+.clearDialog {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  background-color: #1f221f;
+  width: 520px;
+  height: 400px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  margin-right: 12px;
+  padding: 5px;
+  border: 1px solid whitesmoke;
+}

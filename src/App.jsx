@@ -1,8 +1,10 @@
 import './App.css'
+
 import Palettes from './Components/Palettes'
 import SelectedPalette from './Components/SelectedPalette'
 import ScreenEditor from './Components/ScreenEditor'
 import ButtonPanel from './Components/ButtonPanel'
+import ClearDialog from './Dialogs/ClearDialog'
 
 const App = () => {
   return (
@@ -10,7 +12,7 @@ const App = () => {
       <h1>SG-Edit SepTandy 2023</h1>
       <div className="mainLayout">
         <div className="maincolumn1">
-          <ButtonPanel/>
+          <ButtonPanel />
         </div>
         <div className="maincolumn2">
           <ScreenEditor />
@@ -20,6 +22,7 @@ const App = () => {
           <Palettes />
         </div>
       </div>
+      <ClearDialog />
     </div>
   )
 }

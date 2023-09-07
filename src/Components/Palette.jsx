@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { SG4 } from '../Common/ScreenModes'
 import { intToHex } from '../Lib/Util'
 import CharacterSet from '../Common/CharacterSet'

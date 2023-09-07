@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { intToHex } from '../Lib/Util'
 import CharacterSet from '../Common/CharacterSet'
 
