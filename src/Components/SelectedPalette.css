@@ -1,0 +1,15 @@
+.SelectedPalette {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--background);
+  width: 360px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  padding: 5px;
+  border: var(--border);
+}
+
+.CharacterSelection {
+  padding: 5px;
+}

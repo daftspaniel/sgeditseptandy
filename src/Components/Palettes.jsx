@@ -1,5 +1,7 @@
 import Palette from './Palette'
 
+import './Palettes.css'
+
 const Palettes = () => {
   return (
     <div className="Palettes">

@@ -3,6 +3,8 @@ import CharacterSet from '../Common/CharacterSet'
 
 import { useGlobalState } from '../State/Store'
 
+import './SelectedPalette.css'
+
 const characterStyle = { width: 32, height: 48 }
 
 const SelectedPalette = () => {

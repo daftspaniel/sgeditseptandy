@@ -1,0 +1,9 @@
+.Palette {
+  display: 'flex';
+  border: var(--border);
+  width: 156px;
+  margin: 10px;
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 5px;
+}

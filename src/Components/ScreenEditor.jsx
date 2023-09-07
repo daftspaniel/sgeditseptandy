@@ -1,6 +1,8 @@
 import { useGlobalState } from '../State/Store'
 import { getElementClickXY, intToHex } from '../Lib/Util'
 
+import './ScreenEditor.css'
+
 const mouseState = { leftButtonDown: false, rightButtonDown: false }
 let canvas = null
 let context = null

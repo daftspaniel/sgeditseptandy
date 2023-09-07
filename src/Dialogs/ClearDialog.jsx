@@ -124,8 +124,12 @@ const ClearDialog = () => {
         </div>
       </fieldset>
       <div>
-        <button onClick={closeDialog}>Cancel</button>
-        <button onClick={actionDialog}>OK</button>
+        <button className="actionButton" onClick={closeDialog}>
+          Cancel
+        </button>
+        <button className="actionButton" onClick={actionDialog}>
+          OK
+        </button>
       </div>
     </div>
   )

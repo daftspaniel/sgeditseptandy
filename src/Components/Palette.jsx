@@ -3,6 +3,8 @@ import { intToHex } from '../Lib/Util'
 import CharacterSet from '../Common/CharacterSet'
 import { useGlobalState } from '../State/Store'
 
+import './Palette.css'
+
 const Palette = (props) => {
   const chars = []
   const state = useGlobalState()

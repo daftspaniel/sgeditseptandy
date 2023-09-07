@@ -1,0 +1,9 @@
+.Palettes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: var(--background);
+    width: 370px;
+    border-radius: 12px;
+    border: var(--border);
+  }
