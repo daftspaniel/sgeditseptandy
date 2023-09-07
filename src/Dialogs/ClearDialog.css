@@ -1,0 +1,15 @@
+.clsRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px;
+}
+
+.clearDialog {
+  height: max-content;
+}
+
+.numberbox {
+  min-width: 50px;
+  max-width: 50px;
+}

@@ -29,15 +29,29 @@ export const useGlobalState = () => {
     setSecondaryChar: (char) => state.secondaryChar.set(char),
     setChar: (details) => state.screenData[details.x][details.y].set(details),
     getShowClearDialog: () => state.dialogs.value.showClearDialog,
-    setShowClearDialog: (flag) => {
-      console.log(flag)
-      console.log(state.dialogs)
-      state.dialogs.set({ ...state.dialogs.value, showClearDialog: flag })
-      console.log(state.dialogs.value)
-    },
+    setShowClearDialog: (flag) =>
+      state.dialogs.set({ ...state.dialogs.value, showClearDialog: flag }),
+
     clearScreen: (options) => {
-      console.log(options)
-      state.screenData.set(buildGrid(SG4.columns, SG4.rows, SG4.defaultCharacter))
+      if (options.testcard) {
+        const mode = state.activeMode.value
+        const data = buildGrid(mode.columns, mode.rows, mode.defaultCharacter)
+        let char = 0
+
+        for (let y = 0; y < mode.rows; y++) {
+          for (let x = 0; x < mode.columns; x++) {
+            data[x][y].value = char
+            char++
+            if (char > 255) {
+              char = 0
+            }
+          }
+        }
+        state.screenData.set(data)
+        return
+      }
+
+      state.screenData.set(buildGrid(SG4.columns, SG4.rows, options.char))
     },
   }
 }
