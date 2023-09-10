@@ -21,7 +21,15 @@ const ExportDialog = () => {
 
   return (
     <div className="exportDialog">
-      <div></div>
+      <div>
+        <textarea
+          cols="150"
+          rows="40"
+          style={{ fontSize: 11, marginTop: 8 }}
+          // value={getExportCode()}
+          // onChange={(e) => setCsvData(e.target.value)}
+        ></textarea>
+      </div>
       <ActionButtons close={closeDialog} action={actionDialog} />
     </div>
   )
