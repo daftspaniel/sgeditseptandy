@@ -3,6 +3,7 @@ import { localstored } from '@hookstate/localstored'
 
 import { SG4 } from '../Common/ScreenModes'
 import { buildGrid } from '../Lib/Util.js'
+import { buildTestCard} from './Helpers.js'
 
 const initialState = hookstate(
   {
@@ -31,23 +32,13 @@ export const useGlobalState = () => {
     getShowClearDialog: () => state.dialogs.value.showClearDialog,
     setShowClearDialog: (flag) =>
       state.dialogs.set({ ...state.dialogs.value, showClearDialog: flag }),
+    getShowExportDialog: () => state.dialogs.value.showExportDialog,
+    setShowExportDialog: (flag) =>
+      state.dialogs.set({ ...state.dialogs.value, showExportDialog: flag }),
 
     clearScreen: (options) => {
       if (options.testcard) {
-        const mode = state.activeMode.value
-        const data = buildGrid(mode.columns, mode.rows, mode.defaultCharacter)
-        let char = 0
-
-        for (let y = 0; y < mode.rows; y++) {
-          for (let x = 0; x < mode.columns; x++) {
-            data[x][y].value = char
-            char++
-            if (char > 255) {
-              char = 0
-            }
-          }
-        }
-        state.screenData.set(data)
+        buildTestCard(state)
         return
       }
 

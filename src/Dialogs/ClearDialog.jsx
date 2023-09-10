@@ -1,40 +1,11 @@
 import { useState } from 'react'
 import { useGlobalState } from '../State/Store'
 
+import { colours } from './Helpers/screenhelpers'
+import ActionButtons from './Common/ActionButtons'
+
 import './Dialog.css'
 import './ClearDialog.css'
-
-export const getTestCard = (modeId) => {
-  let char = 0
-  const screenMode = getScreenModeById(modeId)
-  const data = buildGrid(
-    screenMode.columns,
-    screenMode.rows,
-    screenMode.defaultCharacter
-  )
-
-  for (let y = 0; y < screenMode.rows; y++) {
-    for (let x = 0; x < screenMode.columns; x++) {
-      data[x][y].value = char
-      char++
-      if (char > 255) char = 0
-    }
-  }
-
-  return data
-}
-
-const colours = [
-  { value: 0, colour: '#111111', char: 128 },
-  { value: 1, colour: '#09ff08', char: 143 },
-  { value: 2, colour: '#fdff41', char: 159 },
-  { value: 3, colour: '#2110b6', char: 175 },
-  { value: 4, colour: '#b50421', char: 191 },
-  { value: 5, colour: '#ffffff', char: 207 },
-  { value: 6, colour: '#09d773', char: 223 },
-  { value: 7, colour: '#ff1cff', char: 239 },
-  { value: 8, colour: '#ff4107', char: 255 },
-]
 
 const ClearDialog = () => {
   const state = useGlobalState()
@@ -123,14 +94,7 @@ const ClearDialog = () => {
           />
         </div>
       </fieldset>
-      <div>
-        <button className="actionButton" onClick={closeDialog}>
-          Cancel
-        </button>
-        <button className="actionButton" onClick={actionDialog}>
-          OK
-        </button>
-      </div>
+      <ActionButtons close={closeDialog} action={actionDialog} />
     </div>
   )
 }

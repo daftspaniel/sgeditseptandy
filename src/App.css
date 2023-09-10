@@ -39,8 +39,8 @@
 }
 
 .actionButton {
-  width: 100px;
-  border-radius: 4px;
+  width: 120px;
+  border-radius: 6px;
   padding: 12px;
   background-color: rgb(34, 34, 34);
 }

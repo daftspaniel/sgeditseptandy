@@ -5,6 +5,7 @@ import SelectedPalette from './Components/SelectedPalette'
 import ScreenEditor from './Components/ScreenEditor'
 import ButtonPanel from './Components/ButtonPanel'
 import ClearDialog from './Dialogs/ClearDialog'
+import ExportDialog from './Dialogs/ExportDialog'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         </div>
       </div>
       <ClearDialog />
+      <ExportDialog />
     </div>
   )
 }
