@@ -13,7 +13,7 @@ const ButtonPanel = () => {
         CLS
       </button>      
       <button className="actionButton" onClick={showExportDialog}>
-        EXPORT
+        CODE
       </button>
 
     </div>
