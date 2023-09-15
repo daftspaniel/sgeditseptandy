@@ -7,7 +7,7 @@ const ActionButtons = (props) => {
         Cancel
       </button>
       <button className="actionButton" onClick={props.action}>
-        OK
+        {props.actionText ? props.actionText : 'OK'}
       </button>
     </div>
   )

@@ -3,7 +3,7 @@ import { localstored } from '@hookstate/localstored'
 
 import { SG4 } from '../Common/ScreenModes'
 import { buildGrid } from '../Lib/Util.js'
-import { buildTestCard} from './Helpers.js'
+import { buildTestCard, importHandler } from './Helpers.js'
 
 const initialState = hookstate(
   {
@@ -44,5 +44,6 @@ export const useGlobalState = () => {
 
       state.screenData.set(buildGrid(SG4.columns, SG4.rows, options.char))
     },
+    importCSVData: (csvData) => state.screenData.set(importHandler(csvData)),
   }
 }

@@ -43,6 +43,19 @@ const ExportDialog = () => {
 
   const handleExportTypeChange = (e) => setExportType(e.target.value)
 
+  const downloadHandler = (options) => {
+    const downloader = document.createElement('a')
+    downloader.setAttribute(
+      'href',
+      'data:text/plain;charset=utf-8,' + encodeURIComponent(options.content)
+    )
+    downloader.setAttribute('download', options.filename)
+    downloader.click()
+    closeDialog()
+  }
+
+  const importHandler = (csvData) => state.importCSVData(csvData)
+
   if (!isDialogVisible) {
     return null
   }
@@ -66,6 +79,12 @@ const ExportDialog = () => {
               CSV
             </option>
           </select>
+          <button
+            onClick={() => importHandler(csvData)}
+            disabled={exportType != 2}
+          >
+            Import
+          </button>
         </div>
         <textarea
           cols="150"
@@ -74,16 +93,12 @@ const ExportDialog = () => {
           value={getExportCode()}
           onChange={(e) => setCsvData(e.target.value)}
         ></textarea>
-        {exportType === 2 && (
-          <Button
-            className={classes.importButton}
-            onClick={() => props.importHandler(csvData)}
-          >
-            Import
-          </Button>
-        )}
       </div>
-      <ActionButtons close={closeDialog} action={actionDialog} />
+      <ActionButtons
+        close={closeDialog}
+        action={actionDialog}
+        actionText={'Export'}
+      />
     </div>
   )
 }
