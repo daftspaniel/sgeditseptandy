@@ -9,6 +9,8 @@ import { generateASM } from '../Lib/GenerateASM'
 import { generateBASIC } from '../Lib/GenerateBasic'
 import { generateCSV } from '../Lib/GenerateCSV'
 
+import { downloadTextFile } from './Helpers/ExportHelper'
+
 const ExportDialog = () => {
   const state = useGlobalState()
   const isDialogVisible = state.getShowExportDialog()
@@ -20,6 +22,7 @@ const ExportDialog = () => {
   const closeDialog = () => state.setShowExportDialog(false)
 
   const actionDialog = () => {
+    downloadTextFile({ filename: 'code.bas', content: getExportCode() })
     closeDialog()
   }
 
@@ -42,18 +45,7 @@ const ExportDialog = () => {
   }
 
   const handleExportTypeChange = (e) => setExportType(e.target.value)
-
-  const downloadHandler = (options) => {
-    const downloader = document.createElement('a')
-    downloader.setAttribute(
-      'href',
-      'data:text/plain;charset=utf-8,' + encodeURIComponent(options.content)
-    )
-    downloader.setAttribute('download', options.filename)
-    downloader.click()
-    closeDialog()
-  }
-
+  
   const importHandler = (csvData) => state.importCSVData(csvData)
 
   if (!isDialogVisible) {
