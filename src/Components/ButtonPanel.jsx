@@ -1,4 +1,4 @@
-import { useGlobalState } from '../State/Store'
+import { useGlobalState } from '../State/StateStore'
 
 import './ButtonPanel.css'
 import './Toggle.css'

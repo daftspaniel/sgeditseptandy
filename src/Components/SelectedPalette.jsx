@@ -1,7 +1,7 @@
 import { intToHex } from '../Lib/Util'
 import CharacterSet from '../Common/CharacterSet'
 
-import { useGlobalState } from '../State/Store'
+import { useGlobalState } from '../State/StateStore'
 
 import './SelectedPalette.css'
 
