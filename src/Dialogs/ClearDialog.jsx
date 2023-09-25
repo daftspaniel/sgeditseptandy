@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useGlobalState } from '../State/StateStore'
 
-import { colours } from './Helpers/screenhelpers'
+import { colours } from './Helpers/ColorHelper'
 import ActionButtons from './Common/ActionButtons'
 
 import './Dialog.css'
