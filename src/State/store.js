@@ -12,6 +12,7 @@ const initialState = hookstate(
     activeMode: SG4,
     screenData: buildGrid(SG4.columns, SG4.rows, SG4.defaultCharacter),
     dialogs: { showClearDialog: false },
+    showGrid: true,
   },
   localstored({
     key: 'state-key',
@@ -22,6 +23,8 @@ export const useGlobalState = () => {
   const state = useHookstate(initialState)
 
   return {
+    setShowGrid: (flag) => state.showGrid.set(flag),
+    getShowGrid: () => state.showGrid.value,
     getActiveMode: () => state.activeMode.value,
     getScreenData: () => state.screenData.value,
     getPrimaryChar: () => state.primaryChar.value,

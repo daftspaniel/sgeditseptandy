@@ -7,13 +7,34 @@ const mouseState = { leftButtonDown: false, rightButtonDown: false }
 let canvas = null
 let context = null
 
+const drawGrid = (screenMode) => {
+  for (let i = 0; i < screenMode.columns; i++) {
+    context.beginPath()
+    context.moveTo(i * screenMode.pixelWidth, 0)
+    context.lineTo(
+      i * screenMode.pixelWidth,
+      screenMode.rows * screenMode.pixelHeight
+    )
+    context.stroke()
+  }
+  for (let i = 0; i < screenMode.rows; i++) {
+    context.beginPath()
+    context.moveTo(0, i * screenMode.pixelHeight)
+    context.lineTo(
+      screenMode.columns * screenMode.pixelWidth,
+      i * screenMode.pixelHeight
+    )
+    context.stroke()
+  }
+}
+
 const ScreenEditor = () => {
   const state = useGlobalState()
   const screenMode = state.getActiveMode()
-  const showGrid = false
+  const showGrid = state.getShowGrid()
   const primaryCharacter = state.getPrimaryChar()
   const secondaryCharacter = state.getSecondaryChar()
-
+  
   const canvasClickHandler = (screenMode, e, character, showGrid) => {
     const image = document.getElementById(intToHex(character))
     drawChar(screenMode, e, image, character, showGrid)
@@ -37,7 +58,6 @@ const ScreenEditor = () => {
 
       state.setChar({ x: cellPos.x, y: cellPos.y, value: character })
     }
-    showGrid && drawGrid(screenMode)
   }
 
   const mouseMoveHandler = (

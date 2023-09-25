@@ -1,0 +1,54 @@
+/* https://code-boxx.com/simple-toggle-button-html-css/ */
+
+/* (A) TOGGLE BUTTON CONTAINER */
+label.tog {
+  /* (A1) DIMENSIONS */
+  display: block;
+  width: 30px;
+  height: 20px;
+
+  /* (A2) COSMETICS */
+  border: 5px solid #cacaca;
+  background: #cacaca;
+  cursor: pointer;
+}
+
+/* (B) "INNER SWITCH" */
+label.tog::before {
+  /* (B1) DIMENSIONS */
+  content: '';
+  display: block;
+  width: 50%;
+  height: 100%;
+
+  /* (B2) COSMETICS */
+  background: #fff;
+}
+
+label.tog::before {
+  content: 'O';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input.tog:checked + label.tog::before {
+  content: 'I';
+}
+
+/* (C) TOGGLE MECHANISM */
+/* (C1) HIDE CHECKBOX */
+input.tog {
+  display: none;
+}
+
+/* (C2) CHANGE SWITCH POSITION */
+input.tog:checked + label.tog::before {
+  position: relative;
+  left: 50%;
+}
+
+/* (C3) CHANGE COLOR */
+input.tog:checked + label.tog {
+  border: 5px solid #2285f5;
+  background: #2285f5;
+}
