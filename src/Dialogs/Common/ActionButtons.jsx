@@ -2,11 +2,15 @@ import '../Dialog.css'
 
 const ActionButtons = (props) => {
   return (
-    <div>
+    <div className="actionButtons">
       <button className="actionButton" onClick={props.close}>
         Cancel
       </button>
-      <button className="actionButton" onClick={props.action}>
+      <button
+        className="actionButton"
+        onClick={props.action}
+        style={{ backgroundColor: 'green' }}
+      >
         {props.actionText ? props.actionText : 'OK'}
       </button>
     </div>

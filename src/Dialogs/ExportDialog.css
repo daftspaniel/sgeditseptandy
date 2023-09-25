@@ -3,16 +3,31 @@
   top: 60px;
   left: 60px;
   background-color: #1f221f;
-  width: 950px;
-  height: 600px;
+  width: 930px;
+  height: 500px;
   border-radius: 12px;
   margin-bottom: 12px;
   margin-top: 12px;
   margin-right: 12px;
-  padding: 5px;
+  padding: 15px;
   border: 1px solid whitesmoke;
 }
 
 .exportTypeSelect {
   width: 120px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.editor {
+  margin-bottom: 10px;
+}
+
+.exportTopBar {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.exportFilenameField {
+  padding-left: 150px;
 }

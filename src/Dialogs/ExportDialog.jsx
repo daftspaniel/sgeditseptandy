@@ -16,13 +16,14 @@ const ExportDialog = () => {
   const isDialogVisible = state.getShowExportDialog()
   const screenMode = state.getActiveMode()
   const screenData = state.getScreenData()
-
   let [exportType, setExportType] = useState(1)
+  const [filename, setFilename] = useState('myscreen.bas')
 
+  const isCSVExportType = exportType == 2
   const closeDialog = () => state.setShowExportDialog(false)
 
   const actionDialog = () => {
-    downloadTextFile({ filename: 'code.bas', content: getExportCode() })
+    downloadTextFile({ filename: filename + '.bas', content: getExportCode() })
     closeDialog()
   }
 
@@ -44,8 +45,19 @@ const ExportDialog = () => {
     if (exportType == 2) return sourceCSV
   }
 
-  const handleExportTypeChange = (e) => setExportType(e.target.value)
-  
+  const handleExportTypeChange = (e) => {
+    let type = e.target.value
+    let newFilename = filename
+    setExportType(type)
+    if (newFilename.indexOf('.') > -1) {
+      newFilename = filename.substring(0, filename.indexOf('.'))
+    }
+
+    if (type == 0) setFilename(newFilename + '.asm')
+    if (type == 1) setFilename(newFilename + '.bas')
+    if (type == 2) setFilename(newFilename + '.csv')
+  }
+
   const importHandler = (csvData) => state.importCSVData(csvData)
 
   if (!isDialogVisible) {
@@ -55,7 +67,8 @@ const ExportDialog = () => {
   return (
     <div className="exportDialog">
       <div>
-        <div>
+        <div className="exportTopBar">
+          Export Type:{'  '}
           <select
             value={exportType}
             className="exportTypeSelect"
@@ -71,14 +84,20 @@ const ExportDialog = () => {
               CSV
             </option>
           </select>
-          <button
-            onClick={() => importHandler(csvData)}
-            disabled={exportType != 2}
-          >
-            Import
-          </button>
+          {isCSVExportType && (
+            <button onClick={() => importHandler(csvData)}>Import</button>
+          )}
+          <div className="exportFilenameField">
+            Export Filename:{' '}
+            <input
+              type="text"
+              value={filename}
+              onChange={(e) => setFilename(e.target.value)}
+            />
+          </div>
         </div>
         <textarea
+          className="editor"
           cols="150"
           rows="30"
           style={{ fontSize: 11, marginTop: 8 }}
