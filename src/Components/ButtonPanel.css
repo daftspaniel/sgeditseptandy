@@ -5,3 +5,17 @@
   justify-content: space-around;
   padding: 10px;
 }
+.scrollButtons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.scrollButton {
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: larger;
+}

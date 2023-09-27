@@ -8,6 +8,7 @@ const ButtonPanel = () => {
   const showClearDialog = () => state.setShowClearDialog(true)
   const showExportDialog = () => state.setShowExportDialog(true)
   const toggleGrid = () => state.setShowGrid(!state.getShowGrid())
+  const scroll = (direction) => state.scrollScreen(direction)
 
   return (
     <div className="buttonColumn">
@@ -19,8 +20,29 @@ const ButtonPanel = () => {
       </button>
       <div className="gridToggle">
         GRID
-        <input className="tog" type="checkbox" id="demo" onClick={toggleGrid} checked={state.getShowGrid()}/>
+        <input
+          className="tog"
+          type="checkbox"
+          id="demo"
+          onChange={toggleGrid}
+          checked={state.getShowGrid()}
+        />
         <label className="tog" htmlFor="demo"></label>
+      </div>
+      SCROLL
+      <div className="scrollButtons">
+        <button className="scrollButton" onClick={()=>scroll('u')}>
+          ⬆️
+        </button>
+        <button className="scrollButton" onClick={()=>scroll('d')}>
+          ⬇️
+        </button>
+        <button className="scrollButton" onClick={()=>scroll('l')}>
+          ⬅️
+        </button>
+        <button className="scrollButton" onClick={()=>scroll('r')}>
+          ➡️
+        </button>
       </div>
     </div>
   )
