@@ -86,3 +86,38 @@ export const scrollScreen = (direction, data, mode) => {
   }
   return data
 }
+
+export const mirrorScreen = (direction, data, mode) => {
+  const colMidPoint = mode.columns / 2
+  const colEndPoint = mode.columns - 1
+  const rowMidPoint = mode.rows / 2
+  const rowEndPoint = mode.rows - 1
+
+  if (direction === 'LtoR') {
+    for (let j = 0; j < mode.rows; j++) {
+      for (let i = 0; i < colMidPoint; i++) {
+        data[colEndPoint - i][j].value = data[i][j].value
+      }
+    }
+  } else if (direction === 'BtoT') {
+    for (let i = 0; i < rowMidPoint; i++) {
+      for (let j = 0; j < mode.columns; j++) {
+        data[j][i].value = data[j][rowEndPoint - i].value
+      }
+    }
+  } else if (direction === 'TtoB') {
+    for (let i = 0; i < rowMidPoint; i++) {
+      for (let j = 0; j < mode.columns; j++) {
+        data[j][rowEndPoint - i].value = data[j][i].value
+      }
+    }
+  } else if (direction === 'RtoL') {
+    for (let j = 0; j < mode.rows; j++) {
+      for (let i = 0; i < colMidPoint; i++) {
+        data[i][j].value = data[colEndPoint - i][j].value
+      }
+    }
+  }
+
+  return data
+}

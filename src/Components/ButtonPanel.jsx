@@ -9,6 +9,7 @@ const ButtonPanel = () => {
   const showExportDialog = () => state.setShowExportDialog(true)
   const toggleGrid = () => state.setShowGrid(!state.getShowGrid())
   const scroll = (direction) => state.scrollScreen(direction)
+  const mirror = (direction) => state.mirrorScreen(direction)
 
   return (
     <div className="buttonColumn">
@@ -31,17 +32,32 @@ const ButtonPanel = () => {
       </div>
       SCROLL
       <div className="scrollButtons">
-        <button className="scrollButton" onClick={()=>scroll('u')}>
+        <button className="scrollButton" onClick={() => scroll('u')}>
           ⬆️
         </button>
-        <button className="scrollButton" onClick={()=>scroll('d')}>
+        <button className="scrollButton" onClick={() => scroll('d')}>
           ⬇️
         </button>
-        <button className="scrollButton" onClick={()=>scroll('l')}>
+        <button className="scrollButton" onClick={() => scroll('l')}>
           ⬅️
         </button>
-        <button className="scrollButton" onClick={()=>scroll('r')}>
+        <button className="scrollButton" onClick={() => scroll('r')}>
           ➡️
+        </button>
+      </div>
+      MIRROR
+      <div className="mirrorButtons">
+        <button className="mirrorButton" onClick={() => mirror('LtoR')}>
+          L &#65516; R
+        </button>
+        <button className="mirrorButton" onClick={() => mirror('BtoT')}>
+          B &#65516; T
+        </button>
+        <button className="mirrorButton" onClick={() => mirror('TtoB')}>
+          T &#65516; B
+        </button>
+        <button className="mirrorButton" onClick={() => mirror('RtoL')}>
+          R &#65516; L
         </button>
       </div>
     </div>

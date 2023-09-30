@@ -3,7 +3,13 @@ import { localstored } from '@hookstate/localstored'
 
 import { SG4 } from '../Common/ScreenModes'
 import { buildGrid } from '../Lib/Util.js'
-import { buildTestCard, importHandler, scrollScreen } from './Helpers.js'
+import {
+  buildTestCard,
+  importHandler,
+  scrollScreen,
+  mirrorScreen,
+} from './Helpers.js'
+
 const blank = buildGrid(SG4.columns, SG4.rows, SG4.defaultCharacter)
 
 const initialState = hookstate(
@@ -52,6 +58,14 @@ export const useGlobalState = () => {
     scrollScreen: (direction) =>
       state.screenData.set(
         scrollScreen(
+          direction,
+          JSON.parse(JSON.stringify(state.screenData.value)),
+          SG4
+        )
+      ),
+    mirrorScreen: (direction) =>
+      state.screenData.set(
+        mirrorScreen(
           direction,
           JSON.parse(JSON.stringify(state.screenData.value)),
           SG4

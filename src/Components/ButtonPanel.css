@@ -1,11 +1,19 @@
 .buttonColumn {
 }
+
 .gridToggle {
   display: flex;
   justify-content: space-around;
   padding: 10px;
 }
+
 .scrollButtons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.mirrorButtons {
   display: flex;
   justify-content: space-around;
   padding: 10px;
