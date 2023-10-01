@@ -10,6 +10,7 @@ const ButtonPanel = () => {
   const toggleGrid = () => state.setShowGrid(!state.getShowGrid())
   const scroll = (direction) => state.scrollScreen(direction)
   const mirror = (direction) => state.mirrorScreen(direction)
+  const undo = () => state.undo()
 
   return (
     <div className="buttonColumn">
@@ -59,6 +60,9 @@ const ButtonPanel = () => {
         <button className="mirrorButton" onClick={() => mirror('RtoL')}>
           R &#65516; L
         </button>
+      </div>
+      <div className="undoButton">
+        <button onClick={() => undo()}>Undo</button>
       </div>
     </div>
   )
