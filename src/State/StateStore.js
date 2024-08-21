@@ -35,9 +35,14 @@ export const useGlobalState = () => {
   const getRedoStack = () => JSON.parse(JSON.stringify(state.redoStack.value))
   const getUndoStack = () => JSON.parse(JSON.stringify(state.undoStack.value))
   const addToUndoStack = () => {
-    //const undoStack = getUndoStack()
-    //undoStack.push(getScreenData())
-    //state.undoStack.set(undoStack)
+    let undoStack = getUndoStack()
+
+    if (undoStack.length > 10) {
+      undoStack = undoStack.slice(-10)
+    }
+    console.log(undoStack.length)
+    undoStack.push(getScreenData())
+    state.undoStack.set(undoStack)
   }
 
   return {
@@ -62,7 +67,7 @@ export const useGlobalState = () => {
 
     clearScreen: (options) => {
       addToUndoStack()
-      
+
       if (options.testcard) {
         buildTestCard(state)
         return
