@@ -35,9 +35,9 @@ export const useGlobalState = () => {
   const getRedoStack = () => JSON.parse(JSON.stringify(state.redoStack.value))
   const getUndoStack = () => JSON.parse(JSON.stringify(state.undoStack.value))
   const addToUndoStack = () => {
-    const undoStack = getUndoStack()
-    undoStack.push(getScreenData())
-    state.undoStack.set(undoStack)
+    //const undoStack = getUndoStack()
+    //undoStack.push(getScreenData())
+    //state.undoStack.set(undoStack)
   }
 
   return {
