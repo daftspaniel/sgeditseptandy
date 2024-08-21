@@ -86,7 +86,7 @@ const ScreenEditor = () => {
       canvas = document.getElementById('sgscreen')
       context = canvas.getContext('2d')
       context.imageSmoothingEnabled = false
-      context.strokeStyle = '#000000'
+      context.strokeStyle = '#dddddd'
       context.lineWidth = 1
     }
 
